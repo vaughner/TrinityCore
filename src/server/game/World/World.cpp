@@ -1706,6 +1706,8 @@ void World::SetInitialWorldSettings()
     sLog->outString("Calculate random battleground reset time..." );
     InitRandomBGResetTime();
 
+	sScriptMgr.SetInitialWorldSettings();
+
     // possibly enable db logging; avoid massive startup spam by doing it here.
     if (sLog->GetLogDBLater())
     {

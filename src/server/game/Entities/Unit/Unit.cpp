@@ -1056,6 +1056,9 @@ void Unit::CalculateSpellDamageTaken(SpellNonMeleeDamage *damageInfo, int32 dama
         damage = 0;
 
     damageInfo->damage = damage;
+
+	//Hook For CalculateSpellDamageTaken
+	sScriptMgr.CalculateSpellDamageTaken(damageInfo, damage, spellInfo, attackType, crit);
 }
 
 void Unit::DealSpellDamage(SpellNonMeleeDamage *damageInfo, bool durabilityLoss)
@@ -1299,6 +1302,9 @@ void Unit::CalculateMeleeDamage(Unit *pVictim, uint32 damage, CalcDamageInfo *da
     }
     else // Impossible get negative result but....
         damageInfo->damage = 0;
+
+	//Hook For CalculateMeleeDamage
+	sScriptMgr.CalculateMeleeDamage(pVictim, damage, damageInfo, attackType);
 }
 
 void Unit::DealMeleeDamage(CalcDamageInfo *damageInfo, bool durabilityLoss)
