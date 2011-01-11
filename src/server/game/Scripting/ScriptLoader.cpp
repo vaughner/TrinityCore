@@ -17,6 +17,8 @@
 
 #include "ScriptLoader.h"
 
+//VAS.AutoBalance
+void AddSC_VAS_AutoBalance();
 
 //examples
 void AddSC_example_creature();
@@ -1202,6 +1204,6 @@ void AddCustomScripts()
 {
 #ifdef SCRIPTS
     /* This is where custom scripts should be added. */
-
+	AddSC_VAS_AutoBalance();
 #endif
 }
